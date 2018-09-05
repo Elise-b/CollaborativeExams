@@ -1,32 +1,26 @@
 package io.github.oliviercailloux.entities;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Getter
+@Setter
+@NoArgsConstructor
+//@Entity
 public class Answer {
 
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private String id;
     private String phrasing;
-
     private String isCorrect;
-
-    public Answer(String phrasing, String isCorrect) {
-        this.phrasing = phrasing;
-        this.isCorrect = isCorrect;
-    }
-
-    public void setPhrasing(String phrasing) {
-        this.phrasing = phrasing;
-    }
-
-    public void setIsCorrect(String isCorrect) {
-        this.isCorrect = isCorrect;
-    }
-
-    public String getPhrasing() {
-        return phrasing;
-    }
-
-    public String getIsCorrect() {
-        return isCorrect;
-    }
 }
 
 

@@ -1,58 +1,26 @@
 package io.github.oliviercailloux.entities;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.ArrayList;
 
+@Getter
+@Setter
+@NoArgsConstructor
+//@Entity
 public class Question {
 
+    //@Id
+    //@GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
     private String phrasing;
     private String language;
-    private int id;
     private Person author;
     private ArrayList<Answer> answers;
-
-    public Question() {
-    }
-
-
-    public void setPhrasing(String phrasing) {
-        this.phrasing = phrasing;
-    }
-
-    public void setLanguage(String language) {
-        this.language = language;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setAuthor(Person author) {
-        this.author = author;
-    }
-
-    public void setAnswers(ArrayList<Answer> answers) {
-        this.answers = answers;
-    }
-
-    public String getPhrasing() {
-        return phrasing;
-    }
-
-    public String getLanguage() {
-        return language;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public Person getAuthor() {
-        return author;
-    }
-
-    public ArrayList<Answer> getAnswers() {
-        return answers;
-    }
-
-
 }

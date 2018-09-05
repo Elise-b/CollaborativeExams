@@ -1,10 +1,10 @@
 package io.github.oliviercailloux.servlets;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import io.github.oliviercailloux.Utils.ServletHelper;
 import io.github.oliviercailloux.entities.Person;
-import io.github.oliviercailloux.entities.Question;
+import io.github.oliviercailloux.services.QuestionService;
+
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -20,17 +20,22 @@ public class QuestionServlet extends HttpServlet {
     @Inject
     ServletHelper helper;
 
+    @Inject
+    QuestionService questionService;
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Person q = helper.getObjectFromRequest(request, Person.class);
+        //Person p = helper.getObjectFromRequest(request, Person.class);
+
+        //questionService.persistData(p);
 
         ObjectMapper mapper = new ObjectMapper();
 
         response.setContentType("application/json");
-        response.getOutputStream().print(mapper.writeValueAsString(q));
+        response.getOutputStream().print(mapper.writeValueAsString(p));
         response.getOutputStream().flush();
         response.getOutputStream().flush();
     }
