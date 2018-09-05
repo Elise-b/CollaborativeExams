@@ -1,7 +1,7 @@
 package io.github.oliviercailloux.Utils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.github.oliviercailloux.entities.Question;
+
 
 public class JsonHelper {
 
@@ -11,8 +11,8 @@ public class JsonHelper {
         try {
             return mapper.readValue(json, clazz);
         } catch (Exception e) {
-
+            throw new RuntimeException("error in Json serialisation in" + clazz.toString());
         }
-        return null;
+
     }
 }

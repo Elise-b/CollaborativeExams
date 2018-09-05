@@ -4,10 +4,6 @@ import javax.servlet.http.HttpServletRequest;
 
 public class ServletHelper {
 
-    public ServletHelper() {
-
-    }
-
     public <T> T getObjectFromRequest(HttpServletRequest request, Class<T> clazz) {
         String jsonString = readJsonFromRequest(request);
         T instance = JsonHelper.convertJsontoObject(jsonString, clazz);
@@ -23,9 +19,9 @@ public class ServletHelper {
             }
             return sb.toString();
         } catch (Exception e) {
-
+                throw new RuntimeException(e);
         }
-        return "error";
+
     }
 
 
