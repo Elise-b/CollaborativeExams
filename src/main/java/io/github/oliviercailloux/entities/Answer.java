@@ -12,7 +12,7 @@ import javax.persistence.Id;
 @Getter
 @Setter
 @NoArgsConstructor
-//@Entity
+@Entity
 public class Answer {
 
 
