@@ -4,13 +4,7 @@ package io.github.oliviercailloux.services;
 import io.github.oliviercailloux.Utils.QueryHelper;
 import io.github.oliviercailloux.entities.Person;
 
-import javax.annotation.PreDestroy;
-import javax.ejb.LocalBean;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 import java.util.ArrayList;
 
 public class PersonService {

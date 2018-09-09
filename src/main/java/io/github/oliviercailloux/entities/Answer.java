@@ -18,7 +18,7 @@ public class Answer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String id;
+    private Long id;
     private String phrasing;
     private String isCorrect;
 }

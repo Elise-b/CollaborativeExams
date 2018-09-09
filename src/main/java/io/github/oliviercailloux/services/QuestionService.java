@@ -3,10 +3,7 @@ package io.github.oliviercailloux.services;
 import io.github.oliviercailloux.entities.Person;
 import io.github.oliviercailloux.entities.Question;
 
-import javax.ejb.LocalBean;
-import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import java.util.Collection;
 
