@@ -9,23 +9,21 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-//@Entity
 public class Question {
-
-  //  @Id
-    //@GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     private String phrasing;
     private String language;
-    @JsonDeserialize(using= DeserializerPerson.class)
-    //@OneToOne
+    @JsonDeserialize(using = DeserializerPerson.class)
     private Person person;
-    //@JsonDeserialize(using= DeserializerAnswer.class)
-    //@OneToMany
+    ///@JsonDeserialize(using = DeserializerAnswer.class)
+   // @OneToMany
     //private ArrayList<Answer> answers;
 }

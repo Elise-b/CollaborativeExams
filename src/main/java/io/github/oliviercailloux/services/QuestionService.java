@@ -1,30 +1,32 @@
 package io.github.oliviercailloux.services;
 
+import io.github.oliviercailloux.Utils.QueryHelper;
 import io.github.oliviercailloux.entities.Person;
 import io.github.oliviercailloux.entities.Question;
 
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+import java.util.ArrayList;
 import java.util.Collection;
 
 
 public class QuestionService {
 
-    private EntityManager em;
+    @Inject
+    private QueryHelper em;
 
-    public Question persistData(Question question) {
-
-        Person p = question.getPerson();
-        em.persist(p);
+    public Question persist(Question question) {
         return em.merge(question);
     }
 
-    public void persistP(Person p) {
-        em.persist(p);
+    public Question findById(Long id) {
+        return em.find(Question.class, id);
+
     }
 
-    public Collection<Person> findAllPerson() {
-        Query query = em.createQuery("SELECT e FROM Person e");
-        return (Collection<Person>) query.getResultList();
+    public ArrayList<Question> findAll() {
+        return em.findall("SELECT e FROM Question e");
     }
+
 }
