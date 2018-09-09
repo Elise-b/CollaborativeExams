@@ -29,7 +29,6 @@ public class PersonServlet extends HttpServlet {
         if (id != null) {
             getPersonById(response, id);
         } else {
-
             getAllPerson(response);
         }
     }
@@ -40,7 +39,7 @@ public class PersonServlet extends HttpServlet {
         servletHelper.buildJsonResponse(response, person);
     }
 
-    private void getPersonById( HttpServletResponse response, String id) {
+    private void getPersonById(HttpServletResponse response, String id) {
         Person person = personService.findById((Long.parseLong(id)));
         servletHelper.buildJsonResponse(response, person);
     }

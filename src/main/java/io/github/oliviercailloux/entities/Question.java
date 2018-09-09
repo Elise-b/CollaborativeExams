@@ -14,16 +14,16 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-@Entity
+//@Entity
 public class Question {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+  //  @Id
+    //@GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String phrasing;
     private String language;
     @JsonDeserialize(using= DeserializerPerson.class)
-    @OneToOne
+    //@OneToOne
     private Person person;
     //@JsonDeserialize(using= DeserializerAnswer.class)
     //@OneToMany

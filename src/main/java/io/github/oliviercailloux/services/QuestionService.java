@@ -11,11 +11,8 @@ import javax.persistence.Query;
 import java.util.Collection;
 
 
-@Stateless
-@LocalBean
 public class QuestionService {
 
-    @PersistenceContext(unitName = "collaborativeExamsPU")
     private EntityManager em;
 
     public Question persistData(Question question) {

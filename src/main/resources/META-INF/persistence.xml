@@ -4,9 +4,9 @@
              http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
              version="2.1">
 
-    <persistence-unit name="collaborativeExamsPU" transaction-type="JTA">
+    <persistence-unit name="collaborativeExamsPU2" transaction-type="JTA">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <jta-data-source>collaborativeExamsPU</jta-data-source>
+        <jta-data-source>collaborativeExamsPU2</jta-data-source>
 
         <class>io.github.oliviercailloux.entities.Person</class>
 
